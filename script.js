@@ -155,3 +155,9 @@ spelRegels.addEventListener("click", weergeefSpelRegels)
 //PREVENT DEFAULT: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault -
 
 //INCLUDES: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes?retiredLocale=nl
+
+
+//https://www.youtube.com/watch?v=0mfJn604GT4
+
+//https://www.youtube.com/watch?v=i75GQG7YMu8
+
