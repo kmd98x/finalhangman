@@ -1,5 +1,5 @@
 body {
-  background: #16535d;
+    background: #16535d;
 }
 
 /*
@@ -9,56 +9,58 @@ body {
 */
 
 .logo {
-  display: inline;
-  padding: 2em;
-  z-index: 1;
-  position: relative;
+    display: inline;
+    padding: 2em;
+    z-index: 1;
+    position: relative;
 }
 
 .zeroState.hidden {
-  display: none;
+    display: none;
 }
 
 .zeroState {
-  display: flex;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
-  align-items: center;
-  flex-direction: column;
-  gap: 3em;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    align-items: center;
+    flex-direction: column;
+    gap: 3em;
+    background: #16535d;
 }
 
 .zeroState button {
-  background: #ffffff;
-  border: none;
-  border-radius: 0.6em;
-  padding: 1em 2em;
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  text-decoration: none;
-  color: #16535d;
+    background: #ffffff;
+    border: none;
+    border-radius: 0.6em;
+    padding: 1em 2em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    text-decoration: none;
+    color: #16535d;
 }
 
 .zeroState button img {
-  width: 0.8em;
+    width: 0.8em;
 }
 
 /*
 ==================================================================
-============================Het spel==============================
+============================Spelregels============================
 ================================================================== 
 */
 
 .spelRegels {
-    border: #FFFFFF solid .1em;
+    border: #ffffff solid 0.1em;
     max-width: 11em;
     border-radius: 0.6em;
     position: absolute;
     right: 1em;
     top: 1em;
+    z-index: 1;
 }
 
 .spelRegels button {
@@ -68,7 +70,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 2em;
-    color: #FFFFFF;
+    color: #ffffff;
     border: none;
     width: 100%;
 }
@@ -81,13 +83,113 @@ body {
     display: none;
 }
 
-.spelRegels.uitgeklapt p{
+.spelRegels.uitgeklapt p {
     display: block;
     padding: 0.5em 0.5em;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .spelRegels.uitgeklapt img {
     rotate: 180deg;
 }
 
+/*
+==================================================================
+=========================Hangman spel=============================
+================================================================== 
+*/
+
+.eindstand {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eindstand div {
+    background: #ffffff;
+    padding: 5em 10em;
+    border-radius: 0.6em;
+}
+
+.eindstand.verborgen {
+    display: none;
+}
+
+.eindstand button {
+    background: #16535d;
+    padding: 1em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.6em;
+}
+
+.hetHeleSpel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 56em;
+    margin: auto;
+    margin-top: 5em;
+    align-items: flex-end;
+}
+
+.spelAfbeeldingen {
+    height: 30em;
+    position: relative;
+}
+
+.spelAfbeeldingen img {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+}
+
+.spelAfbeeldingen img.weergeefAfbeelding {
+    opacity: 1;
+}
+
+.geradenWoord {
+    color: white;
+    gap: 0.5em;
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5em;
+}
+
+.keyboard div {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    justify-content: center;
+    margin: 0.25em 0.25em;
+}
+
+.keyboard button {
+    border-radius: 0.6em;
+    background-color: #336067;
+    border-style: none;
+    color: #ffffff;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.275);
+    padding: 1em;
+}
+
+.keyboard button.geklikt {
+    background-color: #16535d;
+}
+
+.aantalKansen {
+    color: #ffffff;
+    text-align: center;
+}

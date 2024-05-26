@@ -1,34 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KMD's Hangman</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>KMD's Hangman</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-  <body>
-    <main>
-      <img class="logo" src="fotos/logo.svg" alt="logo" />
+    <body>
+        <main>
+            <img class="logo" src="fotos/logo.svg" alt="logo" />
 
-      <div class="spelRegels">
-        <button>
-          Spel regels <img src="fotos/bxs_up-arrow.svg" alt="pijltje" />
-        </button>
-        <p>
-          Hieronder ziet u een toetsenbord waarop u op elke letter kunt klikken
-          om het woord te raden.
-        </p>
-      </div>
+            <div class="spelRegels">
+                <button>
+                    Spel regels
+                    <img src="fotos/bxs_up-arrow.svg" alt="pijltje" />
+                </button>
+                <p>
+                    Hieronder ziet u een toetsenbord waarop u op elke letter
+                    kunt klikken om het woord te raden.
+                </p>
+            </div>
 
-      <section class="zeroState">
-        <img src="fotos/zero.svg" alt="foto van de zero state" />
-        <button>
-          Start spel <img src="fotos/Vector.svg" alt="play icoon" />
-        </button>
-      </section>
-    </main>
+            <section class="zeroState">
+                <img src="fotos/zero.svg" alt="foto van de zero state" />
+                <button>
+                    Start spel <img src="fotos/Vector.svg" alt="play icoon" />
+                </button>
+            </section>
 
-    <script src="script.js"></script>
-  </body>
+            <section class="eindstand verborgen">
+                <div>
+                    <h3></h3>
+                    <p></p>
+                    <button>Opnieuw spelen</button>
+                </div>
+            </section>
+
+            <section class="hetHeleSpel">
+                <div class="spelAfbeeldingen">
+                    <img src="./fotos/10.svg" alt="" />
+                    <img src="./fotos/9.svg" alt="" />
+                    <img src="./fotos/8.svg" alt="" />
+                    <img src="./fotos/7.svg" alt="" />
+                    <img src="./fotos/6.svg" alt="" />
+                    <img src="./fotos/5.svg" alt="" />
+                    <img src="./fotos/4.svg" alt="" />
+                    <img src="./fotos/3.svg" alt="" />
+                    <img src="./fotos/2.svg" alt="" />
+                    <img src="./fotos/1.svg" alt="" />
+                </div>
+
+                <div class="spelElementen">
+                    <!-- elementen = geraden woord, keyboard en aantal kansen -->
+                    <p class="aantalKansen">Probeer het nog 10 keer</p>
+
+                    <div class="geradenWoord">
+                        <p>__</p>
+                        <p>__</p>
+                        <p>__</p>
+                        <p>__</p>
+                        <p>__</p>
+                    </div>
+
+                    <form class="keyboard">
+                        <div>
+                            <button>Q</button>
+                            <button>W</button>
+                            <button>E</button>
+                            <button>R</button>
+                            <button>T</button>
+                            <button>Y</button>
+                            <button>U</button>
+                            <button>I</button>
+                            <button>O</button>
+                            <button>P</button>
+                        </div>
+
+                        <div>
+                            <button>A</button>
+                            <button>S</button>
+                            <button>D</button>
+                            <button>F</button>
+                            <button>G</button>
+                            <button>H</button>
+                            <button>J</button>
+                            <button>K</button>
+                            <button>L</button>
+                        </div>
+
+                        <div>
+                            <button>Z</button>
+                            <button>X</button>
+                            <button>C</button>
+                            <button>V</button>
+                            <button>B</button>
+                            <button>N</button>
+                            <button>M</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
 </html>
