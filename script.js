@@ -8,6 +8,8 @@ const eindstand = document.querySelector(".eindstand")
 const opnieuwSpelenButton = document.querySelector(".eindstand button")
 const eindstandH = document.querySelector(".eindstand h3")
 const eindstandP = document.querySelector(".eindstand p")
+const blijGeluid = document.querySelector (".blijGeluid")
+const verdrietigGeluid = document.querySelector (".verdrietigGeluid")
 const woorden = [
     "hallo",
     "vloer",
@@ -73,6 +75,7 @@ function voegDeLetterToe(hetRaadwoord, kleineLetter) {
 
     if (gekozenLetters.join("") === hetRaadwoord.join("")) {
         geefResultaat("Hoera", "U heeft gewonnen")
+        blijGeluid.play()
         //console.log("gewonnen")
     }
     //console.log(gekozenLetters.join(""))
@@ -84,6 +87,8 @@ function voegDeAfbeeldingToe() {
 }
 
 function opnieuwSpelen() {
+    verdrietigGeluid.currentTime = 0
+    verdrietigGeluid.pause()
     hetRaadwoord = woorden[Math.floor(Math.random() * woorden.length)].split("")
     console.log(hetRaadwoord)
 
@@ -132,7 +137,8 @@ keyboardButtons.forEach(function (button) {
                 //console.log(kansen)
 
                 if (kansen < 1) {
-                    geefResultaat("Helaas", "U heeft verloren")
+                    geefResultaat("Helaas", 'U heeft verloren. Het juiste woord was ' +'"'+ hetRaadwoord.join("") +'"' )
+                    verdrietigGeluid.play()
                 }
 
                 voegDeAfbeeldingToe()
@@ -156,8 +162,12 @@ spelRegels.addEventListener("click", weergeefSpelRegels)
 
 //INCLUDES: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes?retiredLocale=nl
 
+//AUDIO: https://stackoverflow.com/questions/9419263/how-to-play-audio 
 
-//https://www.youtube.com/watch?v=0mfJn604GT4
+//AUDIO STOPPEN: https://stackoverflow.com/questions/14834520/html5-audio-stop-function
 
-//https://www.youtube.com/watch?v=i75GQG7YMu8
+
+//https://www.youtube.com/watch?v=mN7ai6ql8bQ (sad sound effect)
+
+//https://www.youtube.com/watch?v=i75GQG7YMu8 (happy sound effect)
 

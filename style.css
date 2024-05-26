@@ -1,3 +1,10 @@
+:root {
+    color-scheme: dark, light;
+
+    --dark-bg: #16535d;
+    --light-bg: #
+}
+
 body {
     background: #16535d;
 }
