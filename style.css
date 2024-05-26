@@ -1,0 +1,93 @@
+body {
+  background: #16535d;
+}
+
+/*
+==================================================================
+===========================Zero state=============================
+================================================================== 
+*/
+
+.logo {
+  display: inline;
+  padding: 2em;
+  z-index: 1;
+  position: relative;
+}
+
+.zeroState.hidden {
+  display: none;
+}
+
+.zeroState {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  align-items: center;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.zeroState button {
+  background: #ffffff;
+  border: none;
+  border-radius: 0.6em;
+  padding: 1em 2em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  text-decoration: none;
+  color: #16535d;
+}
+
+.zeroState button img {
+  width: 0.8em;
+}
+
+/*
+==================================================================
+============================Het spel==============================
+================================================================== 
+*/
+
+.spelRegels {
+    border: #FFFFFF solid .1em;
+    max-width: 11em;
+    border-radius: 0.6em;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}
+
+.spelRegels button {
+    background: transparent;
+    padding: 1em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    color: #FFFFFF;
+    border: none;
+    width: 100%;
+}
+
+.spelRegels img {
+    width: 0.8em;
+}
+
+.spelRegels p {
+    display: none;
+}
+
+.spelRegels.uitgeklapt p{
+    display: block;
+    padding: 0.5em 0.5em;
+    color: #FFFFFF;
+}
+
+.spelRegels.uitgeklapt img {
+    rotate: 180deg;
+}
+
