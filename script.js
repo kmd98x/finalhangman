@@ -1,3 +1,4 @@
+const body = document.querySelector("body")
 const startSpel = document.querySelector(".zeroState button")
 const zeroState = document.querySelector(".zeroState")
 const spelRegels = document.querySelector(".spelRegels")
@@ -8,8 +9,9 @@ const eindstand = document.querySelector(".eindstand")
 const opnieuwSpelenButton = document.querySelector(".eindstand button")
 const eindstandH = document.querySelector(".eindstand h3")
 const eindstandP = document.querySelector(".eindstand p")
-const blijGeluid = document.querySelector (".blijGeluid")
-const verdrietigGeluid = document.querySelector (".verdrietigGeluid")
+const blijGeluid = document.querySelector(".blijGeluid")
+const verdrietigGeluid = document.querySelector(".verdrietigGeluid")
+const themaKnoppen = document.querySelectorAll(".themaKnoppen button")
 const woorden = [
     "hallo",
     "vloer",
@@ -89,6 +91,8 @@ function voegDeAfbeeldingToe() {
 function opnieuwSpelen() {
     verdrietigGeluid.currentTime = 0
     verdrietigGeluid.pause()
+    blijGeluid.currentTime = 0
+    blijGeluid.pause()
     hetRaadwoord = woorden[Math.floor(Math.random() * woorden.length)].split("")
     console.log(hetRaadwoord)
 
@@ -111,12 +115,19 @@ function opnieuwSpelen() {
 }
 
 function geefResultaat(titel, tekst) {
-    
     eindstandH.textContent = titel
     eindstandP.textContent = tekst
     opnieuwSpelenButton.addEventListener("click", opnieuwSpelen)
     eindstand.classList.remove("verborgen")
 }
+
+themaKnoppen.forEach(function (knop) {
+    function veranderThema() {
+        body.id = knop.value
+    }
+
+    knop.addEventListener("click", veranderThema)
+})
 
 keyboardButtons.forEach(function (button) {
     function checkDeLetters(event) {
@@ -137,7 +148,13 @@ keyboardButtons.forEach(function (button) {
                 //console.log(kansen)
 
                 if (kansen < 1) {
-                    geefResultaat("Helaas", 'U heeft verloren. Het juiste woord was ' +'"'+ hetRaadwoord.join("") +'"' )
+                    geefResultaat(
+                        "Helaas",
+                        "U heeft verloren. Het juiste woord was " +
+                            '"' +
+                            hetRaadwoord.join("") +
+                            '"'
+                    )
                     verdrietigGeluid.play()
                 }
 
@@ -162,12 +179,10 @@ spelRegels.addEventListener("click", weergeefSpelRegels)
 
 //INCLUDES: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes?retiredLocale=nl
 
-//AUDIO: https://stackoverflow.com/questions/9419263/how-to-play-audio 
+//AUDIO: https://stackoverflow.com/questions/9419263/how-to-play-audio
 
 //AUDIO STOPPEN: https://stackoverflow.com/questions/14834520/html5-audio-stop-function
-
 
 //https://www.youtube.com/watch?v=mN7ai6ql8bQ (sad sound effect)
 
 //https://www.youtube.com/watch?v=i75GQG7YMu8 (happy sound effect)
-

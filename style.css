@@ -1,12 +1,17 @@
-:root {
-    color-scheme: dark, light;
-
-    --dark-bg: #16535d;
-    --light-bg: #
+#blauw {
+    background: #16535d;
 }
 
-body {
-    background: #16535d;
+#rose {
+    background: #840032;
+}
+
+#bruin {
+    background: #524632;
+}
+
+#paars {
+    background: #36213e;
 }
 
 /*
@@ -17,7 +22,7 @@ body {
 
 .logo {
     display: inline;
-    padding: 2em;
+    padding: 0.5em;
     z-index: 1;
     position: relative;
 }
@@ -192,8 +197,79 @@ body {
     padding: 1em;
 }
 
+.themaKnoppen {
+    position: absolute;
+    top: 1em;
+    right: 15em;
+    padding: .9em;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.6em;
+    display: flex;
+    align-items: center;
+    border: .1em white solid;
+}
+
+.themaKnoppen p{
+    left:-11em;
+    top:0em;
+    color: white;
+    /* background-color: rgba(0, 0, 0, 0.02); */
+    margin:0 1em;
+}
+.themaKnoppen button {
+    height: 1em;
+    width: 1em;
+    border: none;
+    margin: 0 .3em;
+    border-radius: 100%;
+}
+
+.themaKnoppen button:hover{
+    transform: scale(1.5);
+    box-shadow: 0 0 .3em white;
+}
+.blauw {
+    background-color: #16535d;
+}
+
+.rose {
+    background-color: #840032;
+}
+
+.bruin {
+    background-color: #524632;
+}
+
+.paars {
+    background-color: #36213e;
+}
+
 .keyboard button.geklikt {
     background-color: #16535d;
+}
+
+#rose .keyboard button {
+    background-color: #d50654;
+}
+
+#rose .keyboard button.geklikt {
+    background-color: #930239;
+}
+
+#bruin .keyboard button {
+    background-color: #6e5f44;
+}
+
+#bruin .keyboard button.geklikt {
+    background-color: #473a23;
+}
+
+#paars .keyboard button {
+    background-color: #492b55;
+}
+
+#paars .keyboard button.geklikt {
+    background-color: #321e39;
 }
 
 .aantalKansen {
