@@ -1,3 +1,5 @@
+//Declaraties van variablen en constanten
+
 const body = document.querySelector("body")
 const startSpel = document.querySelector(".zeroState button")
 const zeroState = document.querySelector(".zeroState")
@@ -40,13 +42,17 @@ const woorden = [
 ]
 
 let kansen = 10
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 let hetRaadwoord = woorden[Math.floor(Math.random() * woorden.length)].split("")
-console.log(hetRaadwoord)
+// console.log(hetRaadwoord)
+
+//Declaraties van functies
 
 function startHetSpel() {
     zeroState.classList.add("hidden")
 }
 
+//https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
 function weergeefSpelRegels() {
     spelRegels.classList.toggle("uitgeklapt")
 }
@@ -59,7 +65,6 @@ function weergeefKansen() {
 function voegDeLetterToe(hetRaadwoord, kleineLetter) {
     let gekozenLetters = []
 
-    //hetRaadwoord is al gesplitst in regel 35. We gaan door het hetRaadwoord en kijken vervolgens of het kleineletter in het hetRaadwoord bestaat. Zo ja, dan plaatsen we de kleineLetter op de juiste plek mbv letters[i]. De i zegt welke positie hij krijgt.
     hetRaadwoord.forEach(function (letter, i) {
         if (letter === kleineLetter) {
             // console.log(kleineLetter)
@@ -75,8 +80,10 @@ function voegDeLetterToe(hetRaadwoord, kleineLetter) {
 
     //console.log(gekozenLetters)
 
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
     if (gekozenLetters.join("") === hetRaadwoord.join("")) {
         geefResultaat("Hoera", "U heeft gewonnen")
+        //https://stackoverflow.com/questions/9419263/how-to-play-audio
         blijGeluid.play()
         //console.log("gewonnen")
     }
@@ -89,10 +96,15 @@ function voegDeAfbeeldingToe() {
 }
 
 function opnieuwSpelen() {
+    //https://stackoverflow.com/questions/14834520/html5-audio-stop-function
     verdrietigGeluid.currentTime = 0
     verdrietigGeluid.pause()
     blijGeluid.currentTime = 0
     blijGeluid.pause()
+
+    //https://www.youtube.com/watch?v=mN7ai6ql8bQ (sad sound effect)
+    //https://www.youtube.com/watch?v=i75GQG7YMu8 (happy sound effect)
+
     hetRaadwoord = woorden[Math.floor(Math.random() * woorden.length)].split("")
     console.log(hetRaadwoord)
 
@@ -131,13 +143,16 @@ themaKnoppen.forEach(function (knop) {
 
 keyboardButtons.forEach(function (button) {
     function checkDeLetters(event) {
+        //https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault -
         event.preventDefault()
 
         const kleineLetter = button.textContent.toLowerCase()
 
+        //https://codedamn.com/news/javascript/contains-in-javascript#
         if (!button.classList.contains("geklikt")) {
             button.classList.add("geklikt")
 
+            //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes?retiredLocale=nl
             if (hetRaadwoord.includes(kleineLetter)) {
                 voegDeLetterToe(hetRaadwoord, kleineLetter)
 
@@ -155,6 +170,8 @@ keyboardButtons.forEach(function (button) {
                             hetRaadwoord.join("") +
                             '"'
                     )
+
+                    //https://stackoverflow.com/questions/9419263/how-to-play-audio
                     verdrietigGeluid.play()
                 }
 
@@ -166,23 +183,7 @@ keyboardButtons.forEach(function (button) {
     button.addEventListener("click", checkDeLetters)
 })
 
+//Eventlisteners
+
 startSpel.addEventListener("click", startHetSpel)
 spelRegels.addEventListener("click", weergeefSpelRegels)
-
-/*
-==================================================================
-===========================Bronnen================================
-================================================================== 
-*/
-
-//PREVENT DEFAULT: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault -
-
-//INCLUDES: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes?retiredLocale=nl
-
-//AUDIO: https://stackoverflow.com/questions/9419263/how-to-play-audio
-
-//AUDIO STOPPEN: https://stackoverflow.com/questions/14834520/html5-audio-stop-function
-
-//https://www.youtube.com/watch?v=mN7ai6ql8bQ (sad sound effect)
-
-//https://www.youtube.com/watch?v=i75GQG7YMu8 (happy sound effect)

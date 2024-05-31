@@ -201,32 +201,32 @@
     position: absolute;
     top: 1em;
     right: 15em;
-    padding: .9em;
+    padding: 0.9em;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.6em;
     display: flex;
     align-items: center;
-    border: .1em white solid;
+    border: 0.1em white solid;
 }
 
-.themaKnoppen p{
-    left:-11em;
-    top:0em;
+.themaKnoppen p {
+    left: -11em;
+    top: 0em;
     color: white;
     /* background-color: rgba(0, 0, 0, 0.02); */
-    margin:0 1em;
+    margin: 0 1em;
 }
 .themaKnoppen button {
     height: 1em;
     width: 1em;
     border: none;
-    margin: 0 .3em;
+    margin: 0 0.3em;
     border-radius: 100%;
 }
 
-.themaKnoppen button:hover{
+.themaKnoppen button:hover {
     transform: scale(1.5);
-    box-shadow: 0 0 .3em white;
+    box-shadow: 0 0 0.3em white;
 }
 .blauw {
     background-color: #16535d;
